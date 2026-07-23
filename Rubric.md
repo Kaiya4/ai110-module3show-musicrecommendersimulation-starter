@@ -1,0 +1,32 @@
+Project 3: Music Recommender Simulation
+
+Total Points: 21pts + 8pts bonus
+Required Features
+3pts 	Clear Explanation of How Music Recommendation Systems Work
+1 	Student provides a short explanation of how real-world recommenders (Spotify, YouTube, etc.) use data features (genre, mood, tempo, user history).
+1 	Explanation correctly distinguishes between input data, user preferences, and ranking/selection.
+1 	Explanation is specific, coherent, and consistent with basic ML literacy concepts (not generic or incorrect).
+3pts 	Creation of a Structured Song Dataset
+1 	A dataset of at least 15-20 songs is created, either as a list of dicts, list of objects, or loaded from a CSV.
+1 	Each song includes at least 3 meaningful attributes (e.g., genre, mood, energy, tempo, era).
+1 	Dataset is valid and loads/runs without errors.
+3pts 	Scoring Function Accurately Reflects User Preferences
+1 	A clear scoring function (e.g., score_song(user_prefs, song)) is implemented using weighting, matching, or similarity logic.
+1 	Scoring logic works for all songs and returns consistent numeric output.
+1 	Scoring reflects the designed features (e.g., if preferences emphasize "high energy," scoring actually incorporates energy).
+3pts 	Recommendation Function Produces a Sorted List of Songs
+1 	A function like recommend_songs(user_prefs, songs) is implemented that ranks or sorts songs by score.
+1 	Output includes at least top 3 recommendations.
+1 	Function runs without errors and works for different user profiles.
+3pts 	Explanations Are Provided for Recommended Songs
+1 	Each recommended song includes a short explanation of why it was selected (e.g., "high energy + matching genre").
+1 	Explanations accurately reflect the scoring function (not generic statements) and appear as text in the README or model_card.md.
+1 	At least three explanations are provided, are clear and readable, and appear as text in the README or model_card.md.
+3pts 	Experiments with Multiple User Profiles
+1 	At least three distinct user profiles are created (e.g., hip-hop fan, acoustic low-energy listener, high-tempo EDM listener).
+1 	The recommender is run for each profile and outputs are presented as text in code blocks in the README or model_card.md.
+1 	Student comments on differences between outputs (e.g., "EDM profile prefers high energy songs; acoustic profile shifts toward low energy guitars").
+3pts 	Completed Model Card
+1 	Model card includes a description of dataset, attributes used, and intended purpose.
+1 	Model card includes an explanation of the algorithmic approach in plain language.
+1 	Model card identifies limitations/biases (e.g., genre imbalance, small dataset, popularity bias) and at least one improvement idea.

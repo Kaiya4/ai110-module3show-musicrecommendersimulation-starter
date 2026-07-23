@@ -1,4 +1,4 @@
-from typing import List, Dict, Tuple, Optional
+from typing import List, Dict, Tuple
 from dataclasses import dataclass
 import csv
 
@@ -39,12 +39,30 @@ class Recommender:
         self.songs = songs
 
     def recommend(self, user: UserProfile, k: int = 5) -> List[Song]:
-        # TODO: Implement recommendation logic
-        return self.songs[:k]
+        """Return the user's top-k songs using the same weighted rules as the CSV API."""
+        preferences = {
+            "genre": user.favorite_genre,
+            "mood": user.favorite_mood,
+            "energy": user.target_energy,
+            "likes_acoustic": user.likes_acoustic,
+        }
+        ranked = sorted(
+            self.songs,
+            key=lambda song: (score_song(preferences, song.__dict__)[0], -song.id),
+            reverse=True,
+        )
+        return ranked[:max(0, k)]
 
     def explain_recommendation(self, user: UserProfile, song: Song) -> str:
-        # TODO: Implement explanation logic
-        return "Explanation placeholder"
+        """Explain the concrete feature matches contributing to a song's score."""
+        preferences = {
+            "genre": user.favorite_genre,
+            "mood": user.favorite_mood,
+            "energy": user.target_energy,
+            "likes_acoustic": user.likes_acoustic,
+        }
+        _, reasons = score_song(preferences, song.__dict__)
+        return ", ".join(reasons) if reasons else "no direct preference matches"
 
 def load_songs(csv_path: str) -> List[Dict]:
     """Load songs from a CSV file with numeric fields converted to numbers."""

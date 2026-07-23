@@ -46,6 +46,13 @@ In short:
 
 `user profile + song features -> feature scores -> weighted total -> sorted top k`
 
+Real-world recommenders use the same general pattern at a larger scale. They
+combine item data such as genre and audio features with user history, likes,
+skips, and listening time. The song catalog is the input data, the profile is
+the user's preference input, and the score is used to rank and select what is
+shown. Production systems also learn weights from many users and add diversity
+and safety rules.
+
 ### User Profile
 
 The example user prefers energetic, mostly non-acoustic rock:
@@ -152,28 +159,8 @@ You can add more tests in `tests/test_recommender.py`.
 
 ## Sample Recommendation Output
 
-Paste a sample of your recommender's output here as a text block so a reader can see what it produces:
+The following output was produced by running `python -m src.main`:
 
-```
-Loaded songs: 17
-
-Top recommendations:
-
-Sunrise City - Score: 4.96
-Because: genre match (+2.0), mood match (+1.0), energy similarity (+1.96)
-
-Gym Hero - Score: 3.74
-Because: genre match (+2.0), energy similarity (+1.74)
-
-Rooftop Lights - Score: 2.92
-Because: mood match (+1.0), energy similarity (+1.92)
-
-Golden Hour Cipher - Score: 1.96
-Because: energy similarity (+1.96)
-
-Night Drive Loop - Score: 1.90
-Because: energy similarity (+1.90)
-```
 ```
 Loaded songs: 17
 
@@ -419,25 +406,25 @@ Because: energy similarity (+3.68), tempo similarity (+0.42)
 
 ## Experiments You Tried
 
-Use this section to document the experiments you ran. For example:
-
-- What happened when you changed the weight on genre from 2.0 to 0.5
-- What happened when you added tempo or valence to the score
-- How did your system behave for different types of users
+I ran the recommender for High-Energy Pop, Chill Lofi, Deep Intense Rock, and a
+conflicting sad-blues/high-energy profile. Each profile produced different top
+results, which matched the intended preferences. In the weight-shift experiment,
+genre was reduced from 2.0 to 1.0 and energy was increased from 2.0 to 4.0;
+high-energy songs moved upward even without a genre match. In the feature-removal
+experiment, mood matching was disabled; results became less sensitive to the
+user's emotional preference and more driven by energy and tempo. I restored the
+original weights and mood rule after the experiments.
 
 ---
 
 ## Limitations and Risks
 
-Summarize some limitations of your recommender.
-
-Examples:
-
-- It only works on a tiny catalog
-- It does not understand lyrics or language
-- It might over favor one genre or mood
-
-You will go deeper on this in your model card.
+The catalog is small and uneven, so one-off genres do not have enough examples
+to represent them well. Fixed genre and mood bonuses can create a filter bubble
+and push down songs that match a user's audio preferences in a different genre.
+The model does not understand lyrics, language, culture, popularity, or changing
+context such as workout versus study time. See the [model card](model_card.md)
+for the detailed limitations and evaluation.
 
 ---
 
@@ -447,8 +434,10 @@ Read and complete `model_card.md`:
 
 [**Model Card**](model_card.md)
 
-Write 1 to 2 paragraphs here about what you learned:
-
-- about how recommenders turn data into predictions
-- about where bias or unfairness could show up in systems like this
-
+This project showed me that a recommender turns structured data and user
+preferences into a prediction by adding weighted evidence. Small changes to the
+weights or removing one feature can noticeably change the ranking, so the design
+can reflect bias even when the code is simple. AI tools helped me draft formulas,
+profiles, and explanations, but I had to verify the types, scores, and output by
+running the CLI. If I continued, I would learn weights from user feedback and
+add diversity rules so recommendations did not become repetitive.
