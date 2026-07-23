@@ -9,6 +9,8 @@ You will implement the functions in recommender.py:
 - recommend_songs
 """
 
+
+
 from recommender import load_songs, recommend_songs
 
 
@@ -16,19 +18,46 @@ def main() -> None:
     songs = load_songs("data/songs.csv") 
     print(f"Loaded songs: {len(songs)}")
 
-    # Starter example profile
-    user_prefs = {"genre": "pop", "mood": "happy", "energy": 0.8}
+    profiles = {
+        "High-Energy Pop": {
+            "genre": "pop",
+            "mood": "happy",
+            "energy": 0.90,
+            "tempo_bpm": 125,
+            "likes_acoustic": False,
+        },
+        "Chill Lofi": {
+            "genre": "lofi",
+            "mood": "chill",
+            "energy": 0.35,
+            "tempo_bpm": 75,
+            "likes_acoustic": True,
+        },
+        "Deep Intense Rock": {
+            "genre": "rock",
+            "mood": "intense",
+            "energy": 0.85,
+            "tempo_bpm": 145,
+            "likes_acoustic": False,
+        },
+        # Adversarial case: a high-energy target conflicts with a sad mood.
+        "Conflicting Preferences": {
+            "genre": "blues",
+            "mood": "sad",
+            "energy": 0.90,
+            "tempo_bpm": 150,
+            "likes_acoustic": True,
+        },
+    }
 
-    recommendations = recommend_songs(user_prefs, songs, k=5)
-
-    print("\nTop recommendations:\n")
-    for rec in recommendations:
-        # You decide the structure of each returned item.
-        # A common pattern is: (song, score, explanation)
-        song, score, explanation = rec
-        print(f"{song['title']} - Score: {score:.2f}")
-        print(f"Because: {explanation}")
-        print()
+    for profile_name, user_prefs in profiles.items():
+        recommendations = recommend_songs(user_prefs, songs, k=5)
+        print(f"\n{profile_name}")
+        print("Top recommendations:\n")
+        for song, score, explanation in recommendations:
+            print(f"{song['title']} - Score: {score:.2f}")
+            print(f"Because: {explanation}")
+            print()
 
 
 if __name__ == "__main__":

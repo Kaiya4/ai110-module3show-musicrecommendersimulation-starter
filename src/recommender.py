@@ -79,17 +79,21 @@ def score_song(user_prefs: Dict, song: Dict) -> Tuple[float, List[str]]:
     reasons: List[str] = []
 
     # Categorical matches are direct signals from the user's profile.
+    # Experiment: halve genre weight from 2.0 to 1.0.
     if user_prefs.get("genre") and song.get("genre") == user_prefs["genre"]:
-        score += 2.0
-        reasons.append("genre match (+2.0)")
-    if user_prefs.get("mood") and song.get("mood") == user_prefs["mood"]:
         score += 1.0
-        reasons.append("mood match (+1.0)")
+        reasons.append("genre match (+1.0)")
+    # Feature-removal experiment: mood is intentionally excluded from scoring.
+    # Restore the following rule after comparing the experiment's rankings:
+    # if user_prefs.get("mood") and song.get("mood") == user_prefs["mood"]:
+    #     score += 1.0
+    #     reasons.append("mood match (+1.0)")
 
     # Reward closeness to the target energy, not merely high energy.
     if user_prefs.get("energy") is not None and song.get("energy") is not None:
         energy_similarity = max(0.0, 1.0 - abs(float(song["energy"]) - float(user_prefs["energy"])))
-        energy_points = 2.0 * energy_similarity
+        # Experiment: double the maximum energy weight from 2.0 to 4.0.
+        energy_points = 4.0 * energy_similarity
         score += energy_points
         reasons.append(f"energy similarity (+{energy_points:.2f})")
 

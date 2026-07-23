@@ -174,6 +174,244 @@ Because: energy similarity (+1.96)
 Night Drive Loop - Score: 1.90
 Because: energy similarity (+1.90)
 ```
+```
+Loaded songs: 17
+
+High-Energy Pop
+Top recommendations:
+
+Sunrise City - Score: 5.81
+Because: genre match (+2.0), mood match (+1.0), energy similarity (+1.84), tempo similarity (+0.47), acousticness preference match (+0.5)
+
+Gym Hero - Score: 4.91
+Because: genre match (+2.0), energy similarity (+1.94), tempo similarity (+0.47), acousticness preference match (+0.5)
+
+Rooftop Lights - Score: 3.72
+Because: mood match (+1.0), energy similarity (+1.72), tempo similarity (+0.50), acousticness preference match (+0.5)
+
+Electric Bloom - Score: 2.91
+Because: energy similarity (+1.92), tempo similarity (+0.49), acousticness preference match (+0.5)
+
+Storm Runner - Score: 2.87
+Because: energy similarity (+1.98), tempo similarity (+0.39), acousticness preference match (+0.5)
+
+
+Chill Lofi
+Top recommendations:
+
+Library Rain - Score: 5.99
+Because: genre match (+2.0), mood match (+1.0), energy similarity (+2.00), tempo similarity (+0.49), acousticness preference match (+0.5)
+
+Midnight Coding - Score: 5.85
+Because: genre match (+2.0), mood match (+1.0), energy similarity (+1.86), tempo similarity (+0.49), acousticness preference match (+0.5)
+
+Focus Flow - Score: 4.88
+Because: genre match (+2.0), energy similarity (+1.90), tempo similarity (+0.48), acousticness preference match (+0.5)
+
+Spacewalk Thoughts - Score: 3.80
+Because: mood match (+1.0), energy similarity (+1.86), tempo similarity (+0.44), acousticness preference match (+0.5)
+
+Coffee Shop Stories - Score: 2.90
+Because: energy similarity (+1.96), tempo similarity (+0.44), acousticness preference match (+0.5)
+
+
+Deep Intense Rock
+Top recommendations:
+
+Storm Runner - Score: 5.85
+Because: genre match (+2.0), mood match (+1.0), energy similarity (+1.88), tempo similarity (+0.47), acousticness preference match (+0.5)
+
+Gym Hero - Score: 3.79
+Because: mood match (+1.0), energy similarity (+1.84), tempo similarity (+0.45), acousticness preference match (+0.5)
+
+Sunrise City - Score: 2.83
+Because: energy similarity (+1.94), tempo similarity (+0.39), acousticness preference match (+0.5)
+
+Electric Bloom - Score: 2.75
+Because: energy similarity (+1.82), tempo similarity (+0.43), acousticness preference match (+0.5)
+
+Rooftop Lights - Score: 2.73
+Because: energy similarity (+1.82), tempo similarity (+0.41), acousticness preference match (+0.5)
+
+
+Conflicting Preferences
+Top recommendations:
+
+Blue Neon - Score: 4.90
+Because: genre match (+2.0), mood match (+1.0), energy similarity (+1.22), tempo similarity (+0.18), acousticness preference match (+0.5)
+
+Storm Runner - Score: 2.47
+Because: energy similarity (+1.98), tempo similarity (+0.49)
+
+Gym Hero - Score: 2.36
+Because: energy similarity (+1.94), tempo similarity (+0.42)
+
+Electric Bloom - Score: 2.33
+Because: energy similarity (+1.92), tempo similarity (+0.41)
+
+Iron Horizon - Score: 2.27
+Because: energy similarity (+1.84), tempo similarity (+0.42)
+```
+
+```
+Output with doubled weight:
+Loaded songs: 17
+
+High-Energy Pop
+Top recommendations:
+
+Sunrise City - Score: 6.65
+Because: genre match (+1.0), mood match (+1.0), energy similarity (+3.68), tempo similarity (+0.47), acousticness preference match (+0.5)
+
+Gym Hero - Score: 5.85
+Because: genre match (+1.0), energy similarity (+3.88), tempo similarity (+0.47), acousticness preference match (+0.5)
+
+Rooftop Lights - Score: 5.44
+Because: mood match (+1.0), energy similarity (+3.44), tempo similarity (+0.50), acousticness preference match (+0.5)
+
+Storm Runner - Score: 4.85
+Because: energy similarity (+3.96), tempo similarity (+0.39), acousticness preference match (+0.5)
+
+Electric Bloom - Score: 4.83
+Because: energy similarity (+3.84), tempo similarity (+0.49), acousticness preference match (+0.5)
+
+
+Chill Lofi
+Top recommendations:
+
+Library Rain - Score: 6.99
+Because: genre match (+1.0), mood match (+1.0), energy similarity (+4.00), tempo similarity (+0.49), acousticness preference match (+0.5)
+
+Midnight Coding - Score: 6.71
+Because: genre match (+1.0), mood match (+1.0), energy similarity (+3.72), tempo similarity (+0.49), acousticness preference match (+0.5)
+
+Focus Flow - Score: 5.78
+Because: genre match (+1.0), energy similarity (+3.80), tempo similarity (+0.48), acousticness preference match (+0.5)
+
+Spacewalk Thoughts - Score: 5.66
+Because: mood match (+1.0), energy similarity (+3.72), tempo similarity (+0.44), acousticness preference match (+0.5)
+
+Coffee Shop Stories - Score: 4.86
+Because: energy similarity (+3.92), tempo similarity (+0.44), acousticness preference match (+0.5)
+
+
+Deep Intense Rock
+Top recommendations:
+
+Storm Runner - Score: 6.73
+Because: genre match (+1.0), mood match (+1.0), energy similarity (+3.76), tempo similarity (+0.47), acousticness preference match (+0.5)
+
+Gym Hero - Score: 5.63
+Because: mood match (+1.0), energy similarity (+3.68), tempo similarity (+0.45), acousticness preference match (+0.5)
+
+Sunrise City - Score: 4.77
+Because: energy similarity (+3.88), tempo similarity (+0.39), acousticness preference match (+0.5)
+
+Electric Bloom - Score: 4.57
+Because: energy similarity (+3.64), tempo similarity (+0.43), acousticness preference match (+0.5)
+
+Rooftop Lights - Score: 4.55
+Because: energy similarity (+3.64), tempo similarity (+0.41), acousticness preference match (+0.5)
+
+
+Conflicting Preferences
+Top recommendations:
+
+Blue Neon - Score: 5.12
+Because: genre match (+1.0), mood match (+1.0), energy similarity (+2.44), tempo similarity (+0.18), acousticness preference match (+0.5)
+
+Storm Runner - Score: 4.45
+Because: energy similarity (+3.96), tempo similarity (+0.49)
+
+Gym Hero - Score: 4.30
+Because: energy similarity (+3.88), tempo similarity (+0.42)
+
+Electric Bloom - Score: 4.25
+Because: energy similarity (+3.84), tempo similarity (+0.41)
+
+Iron Horizon - Score: 4.11
+Because: energy similarity (+3.68), tempo similarity (+0.42)
+```
+
+```
+Output if feature removal:
+Loaded songs: 17
+
+High-Energy Pop
+Top recommendations:
+
+Gym Hero - Score: 5.85
+Because: genre match (+1.0), energy similarity (+3.88), tempo similarity (+0.47), acousticness preference match (+0.5)
+
+Sunrise City - Score: 5.65
+Because: genre match (+1.0), energy similarity (+3.68), tempo similarity (+0.47), acousticness preference match (+0.5)
+
+Storm Runner - Score: 4.85
+Because: energy similarity (+3.96), tempo similarity (+0.39), acousticness preference match (+0.5)
+
+Electric Bloom - Score: 4.83
+Because: energy similarity (+3.84), tempo similarity (+0.49), acousticness preference match (+0.5)
+
+Iron Horizon - Score: 4.50
+Because: energy similarity (+3.68), tempo similarity (+0.32), acousticness preference match (+0.5)
+
+
+Chill Lofi
+Top recommendations:
+
+Library Rain - Score: 5.99
+Because: genre match (+1.0), energy similarity (+4.00), tempo similarity (+0.49), acousticness preference match (+0.5)
+
+Focus Flow - Score: 5.78
+Because: genre match (+1.0), energy similarity (+3.80), tempo similarity (+0.48), acousticness preference match (+0.5)
+
+Midnight Coding - Score: 5.71
+Because: genre match (+1.0), energy similarity (+3.72), tempo similarity (+0.49), acousticness preference match (+0.5)
+
+Coffee Shop Stories - Score: 4.86
+Because: energy similarity (+3.92), tempo similarity (+0.44), acousticness preference match (+0.5)
+
+Spacewalk Thoughts - Score: 4.66
+Because: energy similarity (+3.72), tempo similarity (+0.44), acousticness preference match (+0.5)
+
+
+Deep Intense Rock
+Top recommendations:
+
+Storm Runner - Score: 5.73
+Because: genre match (+1.0), energy similarity (+3.76), tempo similarity (+0.47), acousticness preference match (+0.5)
+
+Sunrise City - Score: 4.77
+Because: energy similarity (+3.88), tempo similarity (+0.39), acousticness preference match (+0.5)
+
+Gym Hero - Score: 4.63
+Because: energy similarity (+3.68), tempo similarity (+0.45), acousticness preference match (+0.5)
+
+Electric Bloom - Score: 4.57
+Because: energy similarity (+3.64), tempo similarity (+0.43), acousticness preference match (+0.5)
+
+Rooftop Lights - Score: 4.55
+Because: energy similarity (+3.64), tempo similarity (+0.41), acousticness preference match (+0.5)
+
+
+Conflicting Preferences
+Top recommendations:
+
+Storm Runner - Score: 4.45
+Because: energy similarity (+3.96), tempo similarity (+0.49)
+
+Gym Hero - Score: 4.30
+Because: energy similarity (+3.88), tempo similarity (+0.42)
+
+Electric Bloom - Score: 4.25
+Because: energy similarity (+3.84), tempo similarity (+0.41)
+
+Blue Neon - Score: 4.12
+Because: genre match (+1.0), energy similarity (+2.44), tempo similarity (+0.18), acousticness preference match (+0.5)
+
+Iron Horizon - Score: 4.11
+Because: energy similarity (+3.68), tempo similarity (+0.42)
+```
 
 **Screenshot or video** *(optional)*: <!-- Insert a screenshot or demo video link here -->
 
